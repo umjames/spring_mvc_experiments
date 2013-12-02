@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Song List</title>
+	</head>
+	<body>
+		<h1>Songs</h1>
+		
+		<ol>
+			#foreach($song in $songs)
+				<li>${song.title} by ${song.artist} comes out on ${song.releaseDate}</li>	
+			#end
+		</ol>
+	</body>
+</html>

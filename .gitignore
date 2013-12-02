@@ -4,3 +4,6 @@ target/
 *.settings/
 .externalToolBuilders/
 
+songstoget.properties
+songstoget.script
+
