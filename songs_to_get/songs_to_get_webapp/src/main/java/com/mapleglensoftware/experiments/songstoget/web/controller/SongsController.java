@@ -29,4 +29,10 @@ public class SongsController
 		List<Song>	songs = songsDAO.getAll();
 		return new ModelAndView("song_list", "songs", songs);
 	}
+	
+	@RequestMapping(value="/new", method=RequestMethod.GET)
+	public ModelAndView showAddSongForm()
+	{
+		return new ModelAndView("song_form");
+	}
 }
