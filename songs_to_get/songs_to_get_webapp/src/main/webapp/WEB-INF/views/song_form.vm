@@ -1,0 +1,11 @@
+<form action="" method="post">
+	<label for="title">Title:</label>
+	#springFormInput("song.title" 'id="title"')<br/>
+	#springShowErrors("<br/>" "")<br/>
+	
+	<label for="artist">Artist:<label>
+	#springFormInput("song.artist" 'id="artist"')<br/>
+	#springShowErrors("<br/>" "")<br/>
+	
+	<input type="submit" value="Add song" />
+</form>

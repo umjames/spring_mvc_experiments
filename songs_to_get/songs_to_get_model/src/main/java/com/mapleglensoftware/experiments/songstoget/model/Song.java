@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Song
@@ -16,9 +18,12 @@ public class Song
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotNull(message="Title cannot be blank")
+	@Size(min=1, max=Integer.MAX_VALUE, message="Title must have at least 1 character")
 	private String	title;
 	private Date	releaseDate;
 	private String	artist;
+	
 	private Date	dateAdded;
 	private Date	dateUpdated;
 	
