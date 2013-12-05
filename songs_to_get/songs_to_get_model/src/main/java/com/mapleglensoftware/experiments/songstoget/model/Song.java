@@ -11,6 +11,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Song
 {
@@ -21,6 +23,8 @@ public class Song
 	@NotNull(message="Title cannot be blank")
 	@Size(min=1, max=Integer.MAX_VALUE, message="Title must have at least 1 character")
 	private String	title;
+	
+	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date	releaseDate;
 	private String	artist;
 	

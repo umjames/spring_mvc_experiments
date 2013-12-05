@@ -18,6 +18,31 @@ public class SongsDAO extends HibernateDaoSupport
 	{
 	}
 	
+	public Song findByID(final int songID)
+	{
+		return getHibernateTemplate().execute(new HibernateCallback<Song>() {
+			@Override
+			public Song doInHibernate(Session session) throws HibernateException, SQLException
+			{
+				return (Song)session.get(Song.class, songID);
+			}
+		});
+	}
+	
+	public void delete(final Song song)
+	{
+		getHibernateTemplate().execute(new HibernateCallback<Song>() {
+
+			@Override
+			public Song doInHibernate(Session session) throws HibernateException, SQLException
+			{
+				session.delete(song);
+				return null;
+			}
+			
+		});
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Song> getAll()
 	{

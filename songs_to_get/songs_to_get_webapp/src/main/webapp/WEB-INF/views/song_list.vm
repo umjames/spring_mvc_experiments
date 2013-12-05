@@ -2,7 +2,11 @@
 
 <ol>
 	#foreach($song in $songs)
-		<li>$!{song.title} by $!{song.artist} comes out on $!{song.releaseDate}</li>	
+		<li>
+			<a href="#springUrl("/song/$!{song.id}/edit")">
+				$!{song.title} by $!{song.artist} comes out on $!{date_tool.format('MM/dd/yyyy', $song.releaseDate)}
+			</a>
+		</li>	
 	#end
 </ol>
 

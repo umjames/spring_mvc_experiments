@@ -7,5 +7,9 @@
 	#springFormInput("song.artist" 'id="artist"')<br/>
 	#springShowErrors("<br/>" "")<br/>
 	
+	<label for="releaseDate">Release Date:</label>
+	#springFormInput("song.releaseDate" 'id="releaseDate"')<br/>
+	#springShowErrors("<br/>" "")<br/>
+	
 	<input type="submit" value="Add song" />
 </form>
